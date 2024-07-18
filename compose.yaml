@@ -1,0 +1,36 @@
+# version: '3.8'
+
+# services:
+#   sql-server:
+#     image: stagecraftsql
+#     container_name: stagecraftsql-container
+#     environment:
+#       SA_PASSWORD: "stagecraftsql@123SQL"
+#       ACCEPT_EULA: "Y"
+#     ports:
+#       - "1433:1433"
+#     networks:
+#       - sqlserver-network
+
+# networks:
+#   sqlserver-network:
+#     driver: bridge
+
+
+version: '3.8'
+
+services:
+  sql-server:
+    image: ourpracticum/dbstagecraft
+    container_name: stagecraftsql-container
+    environment:
+      SA_PASSWORD: "stagecraftsql@123SQL"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - sqlserver-network
+
+networks:
+  sqlserver-network:
+    driver: bridge
